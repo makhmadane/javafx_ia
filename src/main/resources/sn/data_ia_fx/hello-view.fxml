@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sn.data_ia_fx.HelloController">
+   <children>
+      <Text layoutX="187.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion Assurance" underline="true">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Text>
+      <Label layoutX="30.0" layoutY="89.0" text="Nom Client" />
+      <Label layoutX="30.0" layoutY="143.0" text="Montant" />
+      <TextField fx:id="c_nom" layoutX="119.0" layoutY="85.0" />
+      <TextField fx:id="c_montant" layoutX="119.0" layoutY="139.0" />
+      <Button fx:id="b_add" layoutX="427.0" layoutY="73.0" mnemonicParsing="false" onAction="#addAssurrance" prefHeight="25.0" prefWidth="78.0" text="Ajouter" />
+      <Button fx:id="b_update" layoutX="427.0" layoutY="110.0" mnemonicParsing="false" onAction="#updateAssurance" prefHeight="25.0" prefWidth="78.0" text="Modifier" />
+      <Button fx:id="b_delete" layoutX="427.0" layoutY="152.0" mnemonicParsing="false" onAction="#deleteAssurance" prefHeight="25.0" prefWidth="78.0" text="Supprimer" />
+      <Button fx:id="b_clear" layoutX="427.0" layoutY="188.0" mnemonicParsing="false" onAction="#clear" prefHeight="25.0" prefWidth="78.0" text="Effacer" />
+      <TableView fx:id="tab" layoutX="-3.0" layoutY="240.0" prefHeight="160.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="t_id" prefWidth="133.0" text="ID" />
+          <TableColumn fx:id="t_nom" prefWidth="124.0" text="Nom client" />
+            <TableColumn fx:id="t_montant" prefWidth="130.0" text="Montant" />
+            <TableColumn fx:id="t_numero" prefWidth="121.0" text="Numero" />
+        </columns>
+      </TableView>
+      <TextField layoutX="437.0" layoutY="22.0" />
+   </children>
+</AnchorPane>
