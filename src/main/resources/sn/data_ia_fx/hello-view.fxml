@@ -9,7 +9,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sn.data_ia_fx.HelloController">
    <children>
       <Text layoutX="187.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion Assurance" underline="true">
@@ -25,7 +24,7 @@
       <Button fx:id="b_update" layoutX="427.0" layoutY="110.0" mnemonicParsing="false" onAction="#updateAssurance" prefHeight="25.0" prefWidth="78.0" text="Modifier" />
       <Button fx:id="b_delete" layoutX="427.0" layoutY="152.0" mnemonicParsing="false" onAction="#deleteAssurance" prefHeight="25.0" prefWidth="78.0" text="Supprimer" />
       <Button fx:id="b_clear" layoutX="427.0" layoutY="188.0" mnemonicParsing="false" onAction="#clear" prefHeight="25.0" prefWidth="78.0" text="Effacer" />
-      <TableView fx:id="tab" layoutX="-3.0" layoutY="240.0" prefHeight="160.0" prefWidth="600.0">
+      <TableView fx:id="tab" layoutX="-3.0" layoutY="240.0" onMouseClicked="#editAssurance" prefHeight="160.0" prefWidth="600.0">
         <columns>
           <TableColumn fx:id="t_id" prefWidth="133.0" text="ID" />
           <TableColumn fx:id="t_nom" prefWidth="124.0" text="Nom client" />
@@ -33,6 +32,7 @@
             <TableColumn fx:id="t_numero" prefWidth="121.0" text="Numero" />
         </columns>
       </TableView>
-      <TextField layoutX="437.0" layoutY="22.0" />
+      <TextField fx:id="c_search" layoutX="437.0" layoutY="20.0" onKeyReleased="#search" />
+      <TextField fx:id="c_id" layoutX="30.0" layoutY="39.0" visible="false" />
    </children>
 </AnchorPane>

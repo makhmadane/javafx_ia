@@ -106,4 +106,30 @@ public class AssuranceRepository implements IRepository<Assurance> {
         }
         return FXCollections.observableArrayList(assurances);
     }
+
+    public ObservableList<Assurance> findAllSearch(String search ){
+        List<Assurance> assurances = new ArrayList<Assurance>();
+
+        String sql = "select * from assurance where nom like ? or numero like ? or CAST(montant AS VARCHAR) like ?";
+
+        try {
+            PreparedStatement result = this.connection.prepareStatement(sql);
+            result.setString(1,"%"+search+"%");
+            result.setString(2,"%"+search+"%");
+            result.setString(3,"%"+search+"%");
+            ResultSet resultSet =  result.executeQuery();
+
+            while(resultSet.next()){
+                Assurance assurance = new Assurance();
+                assurance.setNumero(resultSet.getString("numero"));
+                assurance.setNomClient(resultSet.getString("nom"));
+                assurance.setMontant(resultSet.getDouble("montant"));
+                assurance.setId(resultSet.getInt("id"));
+                assurances.add(assurance);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return FXCollections.observableArrayList(assurances);
+    }
 }
