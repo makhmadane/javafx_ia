@@ -120,12 +120,5 @@ public class HelloController implements Initializable {
         }
     }
 
-    public void search(KeyEvent keyEvent) {
-        ObservableList<Assurance> assurances = assuranceRepository.findAllSearch(c_search.getText());
-        t_id.setCellValueFactory(new PropertyValueFactory<>("id"));
-        t_montant.setCellValueFactory(new PropertyValueFactory<>("montant"));
-        t_nom.setCellValueFactory(new PropertyValueFactory<>("nomClient"));
-        t_numero.setCellValueFactory(new PropertyValueFactory<>("numero"));
-        tab.setItems(assurances);
-    }
+
 }

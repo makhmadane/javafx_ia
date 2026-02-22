@@ -1,12 +1,25 @@
 package sn.data_ia_fx.entity;
 
-public class Assurance {
-    protected int id;
-   protected String nomClient;
-   protected String numero;
-   protected double montant;
 
-   private static int compteur = 0;
+import javax.persistence.*;
+
+@Entity
+
+public class Assurance {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)  //auto -incremement
+    protected int id;
+
+    @Column(length = 50, name = "nom")
+    protected String nomClient;
+
+    @Column
+    protected String numero;
+
+    @Column
+    protected double montant;
+
+    private static int compteur = 0;
 
     public Assurance() {
     }
@@ -61,7 +74,7 @@ public class Assurance {
         return 0;
     }
     public  String getTypeAssurance(){
-       return "entity.Assurance";
+        return "entity.Assurance";
     }
 
     public double calculCoutTotal(int a){
